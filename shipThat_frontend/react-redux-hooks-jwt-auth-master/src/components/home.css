@@ -1,0 +1,15 @@
+.cool {
+  background-image: url(https://morth.nic.ihttps://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Ffree-photos-vectors%2Ftransport-background&psig=AOvVaw2VlHNU6XwB3__T04DJFpEE&ust=1621230447265000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMiogKHAzfACFQAAAAAdAAAAABADn/sites/default/files/banner2_0.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.cool-section {
+  background: #d3ebf3;
+  padding: 10px;
+  font-family: sans-serif;
+  font-size: larger;
+  font-style: italic;
+  border-radius: 13px;
+}

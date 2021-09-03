@@ -1,0 +1,16 @@
+---
+- name: Pull and Run docker image of shabbir148/bidding_app_frontend
+  hosts: all
+  tasks:
+    - name: Pull shabbir148/bidding_app_frontend
+      docker_image:
+        name: shabbir148/bidding_app_frontend
+        source: pull
+
+    # - name: Create default containers
+    #   docker_container:
+    #     name: bidding_app_frontend
+    #     image: shivraj25/bidding_app_frontend
+    #     state: present
+    #     ports:
+    #       - "3000:3000"

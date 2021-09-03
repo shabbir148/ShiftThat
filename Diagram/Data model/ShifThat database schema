@@ -1,0 +1,33 @@
+CREATE TABLE `user_info` (
+  `email` varchar(255) PRIMARY KEY,
+  `password` char,
+  `role` Enum,
+  `first_name` varchar(255),
+  `last_name` varchar(255),
+  `active` char(1)
+);
+
+CREATE TABLE `bids` (
+  `email` varchar(255),
+  `item_id` int,
+  `time_stamp` timestamp,
+  `bid_value` int
+);
+
+CREATE TABLE `items` (
+  `item_id` int PRIMARY KEY,
+  `items_name` varchar(255),
+  `user_email` varchar(255),
+  `image` varchar(255),
+  `description` text,
+  `on_sale` char(1),
+  `bid_start_time` timestamp,
+  `bid_end_time` timestamp,
+  `base_price` int
+);
+
+ALTER TABLE `bids` ADD FOREIGN KEY (`email`) REFERENCES `user_info` (`email`);
+
+ALTER TABLE `items` ADD FOREIGN KEY (`user_email`) REFERENCES `user_info` (`email`);
+
+ALTER TABLE `items` ADD FOREIGN KEY (`item_id`) REFERENCES `bids` (`item_id`);

@@ -1,0 +1,37 @@
+//// -- Tables and References
+
+// Creating tables
+Table user_info as U {
+  email varchar [pk]
+  password char
+  role Enum
+  first_name varchar
+  last_name varchar
+  active char(1)
+}
+
+// Creating references
+Ref: U.email < bids.email
+Ref: U.email < items.user_email
+
+Table bids {
+  email varchar
+  item_id int
+  time_stamp timestamp
+  bid_value int
+}
+
+Table items as I {
+  item_id int [pk]
+  items_name varchar
+  user_email varchar
+  image varchar
+  description text
+  on_sale char(1)
+  bid_start_time timestamp
+  bid_end_time timestamp
+  base_price int
+}
+
+// Creating reference
+Ref: I.item_id > bids.item_id
